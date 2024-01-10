@@ -1,1 +1,1 @@
-from .stair_case_paradigm import StairCaseUpdater, Choices, ParamUpdate
+from .stair_case_paradigm import Choices, ParamUpdate, StairCaseUpdater
