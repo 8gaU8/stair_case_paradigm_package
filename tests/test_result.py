@@ -10,7 +10,15 @@ def test_step():
         return param
 
     sc = StairCaseUpdater(20.0, update_fn, 6)
-    answers = [True] * 10 + [False, False] + [True, True] + [False] + [True, True, True] + [False] + [True]
+    answers = (
+        [True] * 10
+        + [False, False]
+        + [True, True]
+        + [False]
+        + [True, True, True]
+        + [False]
+        + [True]
+    )
     for answer in answers:
         sc.step(answer)
     assert sc.result() == 1.7708333333333333

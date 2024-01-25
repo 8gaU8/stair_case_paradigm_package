@@ -16,7 +16,9 @@ class StairCaseUpdater:
 
     is_continue = bool
 
-    def __init__(self, initial_param: float, update_fn: ParamUpdate, turn_arounds_count: int) -> None:
+    def __init__(
+        self, initial_param: float, update_fn: ParamUpdate, turn_arounds_count: int
+    ) -> None:
         self.update_fn: "Final[ParamUpdate]" = update_fn
         self.turn_arounds_count: "Final[int]" = turn_arounds_count
         self.initial_param: "Final[float]" = initial_param
@@ -81,7 +83,15 @@ def main():
         return param
 
     sc = StairCaseUpdater(20.0, update_fn, 6)
-    answers = [True] * 10 + [False, False] + [True, True] + [False] + [True, True, True] + [False] + [True]
+    answers = (
+        [True] * 10
+        + [False, False]
+        + [True, True]
+        + [False]
+        + [True, True, True]
+        + [False]
+        + [True]
+    )
     for answer in answers:
         is_continue, param = sc.step(answer)
         print(f"assert sc.step({answer}) == ({is_continue}, {param})")
